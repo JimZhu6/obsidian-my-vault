@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "d2cb66238ea5111a",
+        "id": "601696718996b5e5",
         "type": "tabs",
         "children": [
           {
-            "id": "0ed3ef3c227c3587",
+            "id": "87c31657147ca8a7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "JS-notes/打印页面.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "JS-notes/打印页面.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "JS-notes/打印页面.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "JS-notes/打印页面.md"
+              }
             }
           }
         ]
@@ -140,17 +148,45 @@
   },
   "active": "c787413cef9981b7",
   "lastOpenFiles": [
-    "未命名.canvas",
-    "未命名12312.md",
-    "plugins/obsidian-plugin-proxy/style.css",
-    "plugins/obsidian-plugin-proxy/manifest.json",
-    "plugins/obsidian-plugin-proxy/main.mjs",
-    "plugins/obsidian-plugin-proxy/main.js",
-    "plugins/obsidian-plugin-proxy/main.d.ts",
-    "plugins/obsidian-plugin-proxy/data.json",
-    "plugins/obsidian-plugin-proxy",
-    "plugins",
-    "新建文件夹",
-    "2023-03-17.md"
+    "JS-notes/使用浏览器书签执行js代码.md",
+    "JS-notes/字符串转换数组.md",
+    "JS-notes/JSON.stringify的小技巧.md",
+    "Linux-notes/linux常用指令.md",
+    "Mobile-notes/移动端常用样式及兼容相关.md",
+    "VUE-notes/vue-note.md",
+    "VPS-notes/vps安全相关.md",
+    "VPS-notes/Ubuntu笔记.md",
+    "VPS-notes/ssh小记.md",
+    "VPS-notes/Google Drive笔记.md",
+    "VPS-notes/CentOs7笔记.md",
+    "uniapp/swiper-item高度自适应.md",
+    "VUE-notes/vue3-note.md",
+    "Web-notes/在网页中引入在线字体.md",
+    "README.md",
+    "SUMMARY.md",
+    "Cocos-notes/Cocos2d-js-note.md",
+    "Cocos-notes/Cocos-note.md",
+    "Game-notes/Minecraft-server.md",
+    "Phone-notes/ZenFone6刷机.md",
+    "JS-notes/打印页面.md",
+    "JS-notes/Fisher–Yates shuffle洗牌算法.md",
+    "Windows-notes/windows-note.md",
+    "Windows-notes/node-note.md",
+    "Windows-notes",
+    "Web-notes",
+    "VUE-notes",
+    "VPS-notes",
+    "TypeScript-notes/TypeScript笔记.md",
+    "TypeScript-notes/ts热编译项目.md",
+    "TypeScript-notes",
+    "TelegramBot-notes",
+    "RaspberryPi-notes/img/sp3.jpg",
+    "RaspberryPi-notes/img/sp2.jpg",
+    "RaspberryPi-notes/img/sp1.jpg",
+    "RaspberryPi-notes/img",
+    "RaspberryPi-notes",
+    "Python-notes",
+    "PHP-notes",
+    "未命名.canvas"
   ]
 }
