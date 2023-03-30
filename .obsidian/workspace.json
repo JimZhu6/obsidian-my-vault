@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "601696718996b5e5",
+        "id": "f768cba7c61fd698",
         "type": "tabs",
         "children": [
           {
-            "id": "87c31657147ca8a7",
+            "id": "d2e7cb75e3f2a39c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "JS-notes/打印页面.md",
+                "file": "VPS-notes/Google Drive笔记.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "JS-notes/打印页面.md",
+                "file": "VPS-notes/Google Drive笔记.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "JS-notes/打印页面.md",
+                "file": "VPS-notes/Google Drive笔记.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "JS-notes/打印页面.md"
+                "file": "VPS-notes/Google Drive笔记.md"
               }
             }
           }
@@ -146,8 +146,15 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "c787413cef9981b7",
+  "active": "d2e7cb75e3f2a39c",
   "lastOpenFiles": [
+    "uniapp/swiper-item高度自适应.md",
+    "RaspberryPi-notes/Ubuntu-RaspberryPi.md",
+    "uniapp/微信小程序的图片预览兼容性处理.md",
+    "SUMMARY.md",
+    "TypeScript-notes.md",
+    "uniapp.md",
+    "JS-notes/打印页面.md",
     "JS-notes/使用浏览器书签执行js代码.md",
     "JS-notes/字符串转换数组.md",
     "JS-notes/JSON.stringify的小技巧.md",
@@ -159,25 +166,18 @@
     "VPS-notes/ssh小记.md",
     "VPS-notes/Google Drive笔记.md",
     "VPS-notes/CentOs7笔记.md",
-    "uniapp/swiper-item高度自适应.md",
     "VUE-notes/vue3-note.md",
     "Web-notes/在网页中引入在线字体.md",
     "README.md",
-    "SUMMARY.md",
     "Cocos-notes/Cocos2d-js-note.md",
     "Cocos-notes/Cocos-note.md",
     "Game-notes/Minecraft-server.md",
     "Phone-notes/ZenFone6刷机.md",
-    "JS-notes/打印页面.md",
     "JS-notes/Fisher–Yates shuffle洗牌算法.md",
-    "Windows-notes/windows-note.md",
-    "Windows-notes/node-note.md",
     "Windows-notes",
     "Web-notes",
     "VUE-notes",
     "VPS-notes",
-    "TypeScript-notes/TypeScript笔记.md",
-    "TypeScript-notes/ts热编译项目.md",
     "TypeScript-notes",
     "TelegramBot-notes",
     "RaspberryPi-notes/img/sp3.jpg",
