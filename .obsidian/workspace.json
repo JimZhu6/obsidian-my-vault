@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f768cba7c61fd698",
+        "id": "0d309989ade3fb99",
         "type": "tabs",
         "children": [
           {
-            "id": "d2e7cb75e3f2a39c",
+            "id": "f903509b3494590d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md",
+                "file": "JS-notes/生成音频.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md",
+                "file": "JS-notes/生成音频.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md",
+                "file": "JS-notes/生成音频.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md"
+                "file": "JS-notes/生成音频.md"
               }
             }
           }
@@ -146,12 +146,16 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "d2e7cb75e3f2a39c",
+  "active": "f903509b3494590d",
   "lastOpenFiles": [
+    "JS-notes/生成音频.md",
+    "uniapp/微信小程序的图片预览兼容性处理.md",
+    "README.md",
+    "SUMMARY.md",
+    "Cocos-notes/Cocos-note.md",
+    "VPS-notes/Google Drive笔记.md",
     "uniapp/swiper-item高度自适应.md",
     "RaspberryPi-notes/Ubuntu-RaspberryPi.md",
-    "uniapp/微信小程序的图片预览兼容性处理.md",
-    "SUMMARY.md",
     "TypeScript-notes.md",
     "uniapp.md",
     "JS-notes/打印页面.md",
@@ -164,16 +168,12 @@
     "VPS-notes/vps安全相关.md",
     "VPS-notes/Ubuntu笔记.md",
     "VPS-notes/ssh小记.md",
-    "VPS-notes/Google Drive笔记.md",
     "VPS-notes/CentOs7笔记.md",
     "VUE-notes/vue3-note.md",
     "Web-notes/在网页中引入在线字体.md",
-    "README.md",
     "Cocos-notes/Cocos2d-js-note.md",
-    "Cocos-notes/Cocos-note.md",
     "Game-notes/Minecraft-server.md",
     "Phone-notes/ZenFone6刷机.md",
-    "JS-notes/Fisher–Yates shuffle洗牌算法.md",
     "Windows-notes",
     "Web-notes",
     "VUE-notes",
