@@ -1,12 +1,8 @@
 # ssh小记
 
-
-
 ## 什么是SSH
 
 SSH是一种网络协议，用于计算机之间的加密通信。
-
-
 
 ## 公钥Public Key与私钥Private Key
 
@@ -23,16 +19,26 @@ SSH需要生成公钥Public Key和私钥Private Key, 常用的是使用RSA算法
 
 由此可见，只要多台电脑上的的公钥Public Key(`id_rsa.pub`)和私钥Private Key(`id_rsa`)是一样的，对于服务端来说着其实就是同一个客户端。所以可以通过复制公钥Public Key(`id_rsa.pub`)和私钥Private Key(`id_rsa`)到多台电脑来实现共享登陆。
 
-
-
 ## 多个电脑共用一个ssh
 
 比如我们有多个设备，但不想每个设备上生成一个ssh key，然后去github或其他网站上添加，那样的话，ssh key会比较多，搞起来会比较乱，所以我们想在不同的设备上使用同一个ssh。
 
-做法是，我们只需要将 id_rsa(私钥) 和 id_rsa.pub(公钥) 复制一份到其他电脑就好了。
+做法是，我们只需要将 id\_rsa(私钥) 和 id\_rsa.pub(公钥) 复制一份到其他电脑就好了。
 
 有点需要注意：
 
-确保两个文件的权限是正确的，id_rsa是600，id_rsa.pub是644，比如：**-rw------- 1  id_rsa**、**-rw-r--r-- 1  id_rsa.pub**
+确保两个文件的权限是正确的，id\_rsa是600，id\_rsa.pub是644，比如：**-rw------- 1 id\_rsa**、**-rw-r--r-- 1 id\_rsa.pub**
 
-如果上述方法不可以，那就先在另外的设备上创建好同名的ssh，然后用之前有ssh的设备上的ssh去覆盖。但是，同样要注意 id_rsa 和 id_rsa.pub 文件的权限问题。
+如果上述方法不可以，那就先在另外的设备上创建好同名的ssh，然后用之前有ssh的设备上的ssh去覆盖。但是，同样要注意 id\_rsa 和 id\_rsa.pub 文件的权限问题。
+
+
+
+## 为git设置ssh代理
+
+在`.ssh/config`文件内，对应的Host段增加一行命令。其中ip地址指向代理地址。
+
+{% code title="config" %}
+```sh
+ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:7890 %h %p
+```
+{% endcode %}
