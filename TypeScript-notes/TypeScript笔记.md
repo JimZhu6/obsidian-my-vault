@@ -1,4 +1,4 @@
-# TypeScript
+# TypeScript笔记
 
 ## 热编译
 
@@ -103,8 +103,6 @@ tsconfig.json
 ```
 
 此时，在项目更目录使用`gulp`命令即可执行热编译。
-
-
 
 ## 基础类型
 
@@ -224,6 +222,7 @@ function error(message: string): never {
 ```
 
 ### object
+
 `object`表示非原始类型，也就是除`number`，`string`，`boolean`，`symbol`，`null`或`undefined`之外的类型。
 
 ```ts
@@ -261,8 +260,6 @@ let strLength: number = (someValue as string).length;
 两种形式是等价的。 至于使用哪个大多数情况下是凭个人喜好；
 
 **然而，当你在TypeScript里使用JSX时，只有 `as`语法断言是被允许的。**
-
-
 
 ## 接口
 
@@ -348,8 +345,6 @@ a = ro as number[];
 
 最简单判断该用`readonly`还是`const`的方法是看要把它做为变量使用还是做为一个属性。 做为变量使用的话用`const`，若做为属性则使用`readonly`。
 
-
-
 ## 类
 
 类的实现
@@ -389,7 +384,7 @@ dog.move(10);
 dog.bark();
 ```
 
-类从基类中继承了属性和方法。 这里， `Dog`是一个 *派生类*，它派生自 `Animal` *基类*，通过 `extends`关键字。 派生类通常被称作 *子类*，基类通常被称作 *超类*。
+类从基类中继承了属性和方法。 这里， `Dog`是一个 _派生类_，它派生自 `Animal` _基类_，通过 `extends`关键字。 派生类通常被称作 _子类_，基类通常被称作 _超类_。
 
 ### 类的属性私有化
 
@@ -487,7 +482,7 @@ if (employee.fullName) {
 
 当类被实例化的时候才会被初始化的属性。 创建类的静态成员，这些属性存在于**类本身**上面而不是**类的实例**上。
 
- 在这个例子里，我们使用 `static`定义 `origin`，因为它是所有网格都会用到的属性。 每个实例想要访问这个属性的时候，都要在 `origin`前面加上类名。 如同在实例属性上使用 `this.`前缀来访问属性一样，这里我们使用 `Grid.`来访问静态属性。
+在这个例子里，我们使用 `static`定义 `origin`，因为它是所有网格都会用到的属性。 每个实例想要访问这个属性的时候，都要在 `origin`前面加上类名。 如同在实例属性上使用 `this.`前缀来访问属性一样，这里我们使用 `Grid.`来访问静态属性。
 
 ```ts
 class Grid {
@@ -506,8 +501,6 @@ let grid2 = new Grid(5.0);  // 5x scale
 console.log(grid1.calculateDistanceFromOrigin({x: 10, y: 10}));
 console.log(grid2.calculateDistanceFromOrigin({x: 10, y: 10}));
 ```
-
-
 
 ## 函数
 
@@ -573,14 +566,12 @@ function buildName(firstName: string, ...restOfName: string[]) {
 let buildNameFun: (fname: string, ...rest: string[]) => string = buildName;
 ```
 
-
-
 ## 泛型
 
 > [泛型](https://zh.wikipedia.org/wiki/%E6%B3%9B%E5%9E%8B)的定义主要有以下两种：
 >
 > 1. 在程序编码中一些包含**类型参数**的类型，也就是说泛型的参数只可以代表类，不能代表个别对象。（这是当今较常见的定义）
-> 2. 在程序编码中一些包含参数的[类](https://zh.wikipedia.org/wiki/%E7%B1%BB_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6))。其参数可以代表类或对象等等。（现在人们大多把这称作[模板](https://zh.wikipedia.org/wiki/%E6%A8%A1%E6%9D%BF)）
+> 2. 在程序编码中一些包含参数的[类](https://zh.wikipedia.org/wiki/%E7%B1%BB\_\(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6\))。其参数可以代表类或对象等等。（现在人们大多把这称作[模板](https://zh.wikipedia.org/wiki/%E6%A8%A1%E6%9D%BF)）
 
 一句话概况就是：使用泛型来创建可重用且支持多种类型的数据组件。
 
@@ -627,7 +618,6 @@ myGenericNumber.add = function(x, y) { return x + y; };
 
 定义一个接口来描述约束条件，比如说泛型里需要处理带有`.length`属性的所有类型，只要传入有这个类型的属性，则不报错。
 
-
 ```ts
 interface Lengthwise {
     length: number;
@@ -669,8 +659,6 @@ function createInstance<A extends Animal>(c: new () => A): A {
 createInstance(Lion).keeper.nametag;  // typechecks!
 createInstance(Bee).keeper.hasMask;   // typechecks!
 ```
-
-
 
 ## 枚举
 
@@ -715,17 +703,11 @@ enum isBook{
 }
 ```
 
-
-
 ## 类型兼容性
-
-
 
 ## 高级类型
 
 ### 交叉类型（Intersection Types）
-
-
 
 ### 联合类型（Union Types）
 
@@ -806,7 +788,7 @@ function padLeft(value: string, padding: string | number) {
 
 ### 可以为null的类型
 
- 默认情况下，类型检查器认为 `null`与 `undefined`可以赋值给任何类型。`null`与 `undefined`是所有其它类型的一个有效值。 这也意味着，你阻止不了将它们赋值给其它类型，就算是你想要阻止这种情况也不行
+默认情况下，类型检查器认为 `null`与 `undefined`可以赋值给任何类型。`null`与 `undefined`是所有其它类型的一个有效值。 这也意味着，你阻止不了将它们赋值给其它类型，就算是你想要阻止这种情况也不行
 
 `--strictNullChecks`标记可以解决此错误：当你声明一个变量时，它不会自动地包含 `null`或 `undefined`。 你可以使用联合类型明确的包含它们：
 
@@ -881,7 +863,7 @@ interface Circle {
 }
 ```
 
-首先我们声明了将要联合的接口。 每个接口都有 `kind`属性但有不同的字符串字面量类型。 `kind`属性称做 *可辨识的特征*或 *标签*。 其它的属性则特定于各个接口。 注意，目前各个接口间是没有联系的。 下面我们把它们联合到一起：
+首先我们声明了将要联合的接口。 每个接口都有 `kind`属性但有不同的字符串字面量类型。 `kind`属性称做 _可辨识的特征_或 _标签_。 其它的属性则特定于各个接口。 注意，目前各个接口间是没有联系的。 下面我们把它们联合到一起：
 
 ```ts
 type Shape = Square | Rectangle | Circle;
@@ -925,15 +907,13 @@ let strings: string[] = pluck(person, ['name']); // ok, string[]
 let personProps: keyof Person; // 'name' | 'age'
 ```
 
-
-
 ## 迭代器与生成器
 
 ### 迭代器
 
 #### `for..of` vs. `for..in` 语句
 
-`for..of`和`for..in`均可迭代一个列表；但是用于迭代的值却不同，`for..in`迭代的是对象的 *键* 的列表，而`for..of`则迭代对象的键对应的值。
+`for..of`和`for..in`均可迭代一个列表；但是用于迭代的值却不同，`for..in`迭代的是对象的 _键_ 的列表，而`for..of`则迭代对象的键对应的值。
 
 下面的例子展示了两者之间的区别：
 
@@ -978,8 +958,6 @@ for (var _i = 0; _i < numbers.length; _i++) {
 
 当目标为兼容ECMAScipt 2015的引擎时，编译器会生成相应引擎的`for..of`内置迭代器实现方式。
 
-
-
 ## 模块
 
 模块在其自身的作用域里执行，而不是在全局作用域里；这意味着定义在一个模块里的变量，函数，类等等在模块外部是不可见的，除非你明确地使用`export`形式之一导出它们。 相反，如果想使用其它模块导出的变量，函数，类，接口等的时候，你必须要导入它们，可以使用 `import`形式之一。
@@ -1008,8 +986,6 @@ export { ZipCodeValidator };
 export { ZipCodeValidator as mainValidator };
 ```
 
-
-
 #### 重新导出
 
 我们经常会去扩展其它模块，并且只导出那个模块的部分内容。 重新导出功能并不会在当前模块导入那个模块或定义一个新的局部变量。
@@ -1033,8 +1009,6 @@ export * from "./LettersOnlyValidator"; // exports class LettersOnlyValidator
 export * from "./ZipCodeValidator";  // exports class ZipCodeValidator
 ```
 
-
-
 #### 默认导出
 
 每个模块都可以有一个`default`导出。 默认导出使用 `default`关键字标记；并且一个模块只能够有一个`default`导出。 需要使用一种特殊的导入形式来导入 `default`导出。
@@ -1049,8 +1023,6 @@ export default class ZipCodeValidator {
     }
 }
 ```
-
-
 
 ### 导入
 
@@ -1086,8 +1058,6 @@ let myValidator = new validator.ZipCodeValidator();
 import "./my-module.js";
 ```
 
-
-
 ### `export =` 和 `import = require()`
 
 CommonJS和AMD的环境里都有一个`exports`变量，这个变量包含了一个模块的所有导出内容。
@@ -1099,8 +1069,3 @@ CommonJS和AMD的`exports`都可以被赋值为一个`对象`, 这种情况下�
 `export =`语法定义一个模块的导出`对象`。 这里的`对象`一词指的是类，接口，命名空间，函数或枚举。
 
 **若使用`export =`导出一个模块，则必须使用TypeScript的特定语法`import module = require("module")`来导入此模块。**
-
-
-
-
-

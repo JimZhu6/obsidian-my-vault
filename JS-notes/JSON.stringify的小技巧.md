@@ -1,11 +1,10 @@
-
+# JSON.stringify的小技巧
 
 > 本文转自：[你不知道的 JSON.stringify() 的威力](https://juejin.im/post/5decf09de51d45584d238319)
 
+### `JSON.stringify()` 九大特性
 
-## `JSON.stringify()` 九大特性
-
-### `JSON.stringify()`第一大特性
+#### `JSON.stringify()`第一大特性
 
 **对于 `undefined`、任意的函数以及 `symbol` 三个特殊的值分别作为对象属性的值、数组元素、单独的值时 `JSON.stringify()`将返回不同的结果。**
 
@@ -27,7 +26,7 @@ JSON.stringify(data); // 输出：？
 
 很简单这道题目面试官主要考察的知识点是：
 
-- `undefined`、任意的函数以及 `symbol` 作为对象属性值时 `JSON.stringify()` 将跳过（忽略）对它们进行序列化
+* `undefined`、任意的函数以及 `symbol` 作为对象属性值时 `JSON.stringify()` 将跳过（忽略）对它们进行序列化
 
 **面试官追问**：假设 `undefined`、任意的函数以及 `symbol` 值作为数组元素会是怎样呢？
 
@@ -41,7 +40,7 @@ JSON.stringify(["aaa", undefined, function aa() {
 
 知识点是：
 
-- `undefined`、任意的函数以及 `symbol` 作为数组元素值时，`JSON.stringify()` 会将它们序列化为 `null`
+* `undefined`、任意的函数以及 `symbol` 作为数组元素值时，`JSON.stringify()` 会将它们序列化为 `null`
 
 我们稍微再动下脑筋，如果单独序列化这些值会是什么样的结果呢？
 
@@ -56,19 +55,19 @@ JSON.stringify(Symbol('dd'))
 
 单独转换的结果就是：
 
-- `undefined`、任意的函数以及 `symbol` 被 `JSON.stringify()` 作为单独的值进行序列化时都会返回 `undefined`
+* `undefined`、任意的函数以及 `symbol` 被 `JSON.stringify()` 作为单独的值进行序列化时都会返回 `undefined`
 
-#### `JSON.stringify()` 第一大特性总结
+**`JSON.stringify()` 第一大特性总结**
 
-- `undefined`、任意的函数以及 `symbol` 作为对象属性值时 `JSON.stringify()` 对跳过（忽略）它们进行序列化
-- `undefined`、任意的函数以及 `symbol` 作为数组元素值时，`JSON.stringify()` 将会将它们序列化为 `null`
-- `undefined`、任意的函数以及 `symbol` 被 `JSON.stringify()` 作为单独的值进行序列化时，都会返回 `undefined`
+* `undefined`、任意的函数以及 `symbol` 作为对象属性值时 `JSON.stringify()` 对跳过（忽略）它们进行序列化
+* `undefined`、任意的函数以及 `symbol` 作为数组元素值时，`JSON.stringify()` 将会将它们序列化为 `null`
+* `undefined`、任意的函数以及 `symbol` 被 `JSON.stringify()` 作为单独的值进行序列化时，都会返回 `undefined`
 
-### `JSON.stringify()` 第二大特性
+#### `JSON.stringify()` 第二大特性
 
 也是在使用过程中必须要非常注意的一个点：
 
-- 非数组对象的属性不能保证以特定的顺序出现在序列化后的字符串中。
+* 非数组对象的属性不能保证以特定的顺序出现在序列化后的字符串中。
 
 ```js
 const data = {
@@ -92,9 +91,9 @@ JSON.stringify(["aaa", undefined, function aa() {
 
 正如我们在第一特性所说，`JSON.stringify()` 序列化时会忽略一些特殊的值，所以不能保证序列化后的字符串还是以特定的顺序出现（数组除外）。
 
-### `JSON.stringify()` 第三大特性
+#### `JSON.stringify()` 第三大特性
 
-- 转换值如果有 `toJSON()` 函数，该函数返回什么值，序列化结果就是什么值，并且忽略其他属性的值。
+* 转换值如果有 `toJSON()` 函数，该函数返回什么值，序列化结果就是什么值，并且忽略其他属性的值。
 
 ```js
 JSON.stringify({
@@ -106,9 +105,9 @@ JSON.stringify({
 // "today i learn"
 ```
 
-### `JSON.stringify()`第四大特性
+#### `JSON.stringify()`第四大特性
 
-- `JSON.stringify()` 将会正常序列化 `Date` 的值。
+* `JSON.stringify()` 将会正常序列化 `Date` 的值。
 
 ```js
 JSON.stringify({ now: new Date() });
@@ -117,9 +116,9 @@ JSON.stringify({ now: new Date() });
 
 实际上 `Date` 对象自己部署了 `toJSON()` 方法（同Date.toISOString()），因此 `Date` 对象会被当做字符串处理。
 
-### `JSON.stringify()` 第五大特性
+#### `JSON.stringify()` 第五大特性
 
-- `NaN` 和 `Infinity` 格式的数值及 `null` 都会被当做 `null`。
+* `NaN` 和 `Infinity` 格式的数值及 `null` 都会被当做 `null`。
 
 直接上代码：
 
@@ -132,11 +131,11 @@ JSON.stringify(Infinity)
 // "null"
 ```
 
-### `JSON.stringify()` 第六大特性
+#### `JSON.stringify()` 第六大特性
 
 关于基本类型的序列化：
 
-- 布尔值、数字、字符串的包装对象在序列化过程中会自动转换成对应的原始值。
+* 布尔值、数字、字符串的包装对象在序列化过程中会自动转换成对应的原始值。
 
 ```js
 JSON.stringify([new Number(1), new String("false"), new Boolean(false)]);
@@ -144,11 +143,11 @@ JSON.stringify([new Number(1), new String("false"), new Boolean(false)]);
 
 ```
 
-### `JSON.stringify()` 第七大特性
+#### `JSON.stringify()` 第七大特性
 
 关于对象属性的是否可枚举：
 
-- 其他类型的对象，包括 Map/Set/WeakMap/WeakSet，仅会序列化可枚举的属性。
+* 其他类型的对象，包括 Map/Set/WeakMap/WeakSet，仅会序列化可枚举的属性。
 
 ```js
 // 不可枚举的属性默认会被忽略：
@@ -164,7 +163,7 @@ JSON.stringify(
 // "{"y":"stringify"}"
 ```
 
-### `JSON.stringify()` 第八大特性
+#### `JSON.stringify()` 第八大特性
 
 我们都知道实现深拷贝最简单粗暴的方式就是序列化：`JSON.parse(JSON.stringify())`，这个方式实现深拷贝会因为序列化的诸多特性从而导致诸多的坑点：比如现在我们要说的循环引用问题。
 
@@ -196,15 +195,15 @@ deepClone(obj)
  */
 ```
 
-- 对包含循环引用的对象（对象之间相互引用，形成无限循环）执行此方法，会抛出错误。
+* 对包含循环引用的对象（对象之间相互引用，形成无限循环）执行此方法，会抛出错误。
 
 这也就是为什么用序列化去实现深拷贝时，遇到循环引用的对象会抛出错误的原因。
 
-### `JSON.stringify()` 第九大特性
+#### `JSON.stringify()` 第九大特性
 
 最后，关于 `symbol` 属性还有一点要说的就是：
 
-- 所有以 `symbol` 为属性键的属性都会被完全忽略掉，即便 `replacer` 参数中强制指定包含了它们。
+* 所有以 `symbol` 为属性键的属性都会被完全忽略掉，即便 `replacer` 参数中强制指定包含了它们。
 
 ```js
 JSON.stringify({ [Symbol.for("json")]: "stringify" }, function(k, v) {
@@ -218,15 +217,13 @@ JSON.stringify({ [Symbol.for("json")]: "stringify" }, function(k, v) {
 
 `replacer` 是 `JSON.stringify()` 的第二个参数，我们比较少用到，所以很多时候我们会忘记 `JSON.stringify()` 第二个、第三个参数，场景不多，但是用的好的话会非常方便，关于 `JSON.stringify()` 第九大特性的例子中对 `replacer` 参数不明白的同学先别急，其实很简单，我们马上就会在下面的学习中弄懂。
 
-
-
-## 强大的第二个参数 `replacer`
+### 强大的第二个参数 `replacer`
 
 `replacer` 参数有两种形式，可以是一个函数或者一个数组。作为函数时，它有两个参数，键（key）和值（value），函数类似就是数组方法 `map`、`filter` 等方法的回调函数，对每一个属性值都会执行一次该函数。如果 `replacer` 是一个数组，数组的值代表将被序列化成 JSON 字符串的属性名。
 
-### `replacer` 作为函数时
+#### `replacer` 作为函数时
 
-#### 可以打破九大特性的大多数特性
+**可以打破九大特性的大多数特性**
 
 第二个参数`replacer` 非常强大， `replacer` 作为函数时，我们可以打破九大特性的大多数特性，我们直接来看代码吧。
 
@@ -262,7 +259,7 @@ JSON.stringify(data, (key, value) => {
 
 虽然使用 toString() 方法有点耍流氓的意思但是不得不说第二个参数很强大。
 
-#### 传入 `replacer` 函数的第一个参数
+**传入 `replacer` 函数的第一个参数**
 
 **需要注意的是，replacer 被传入的函数时，第一个参数不是对象的第一个键值对，而是空字符串作为 key 值，value 值是整个对象的键值对：**
 
@@ -285,7 +282,7 @@ JSON.stringify(data, (key, value) => {
 // 5
 ```
 
-#### 实现 `map` 函数
+**实现 `map` 函数**
 
 我们还可以用它来手写实现一个对象的类似 map 的函数。
 
@@ -312,7 +309,7 @@ objMap(data, (key, value) => {
 // {a: 1, b: 3, c: 2, d: 5}
 ```
 
-### `replacer` 作为数组时
+#### `replacer` 作为数组时
 
 `replacer` 作为数组时，结果非常简单，数组的值就代表了将被序列化成 JSON 字符串的属性名。
 
@@ -327,9 +324,7 @@ JSON.stringify(jsonObj, ["params"]);
 // "{"params":"obj,replacer,space"}" 
 ```
 
-
-
-## 有意思却没啥用的第三个参数 `space`
+### 有意思却没啥用的第三个参数 `space`
 
 `space` 参数用来控制结果字符串里面的间距。首先看一个例子就是到这东西到底是干啥用的：
 
@@ -354,22 +349,20 @@ JSON.stringify(tiedan, null, 2);
 // }"
 ```
 
-上面代码一眼就能看出第三个参数的作用了，花里胡哨的，其实这个参数还是比较鸡肋的，除了好看没啥特别的用处。我们用 `\t`、 `\n` 等缩进能让输出更加格式化，更适于观看。
+上面代码一眼就能看出第三个参数的作用了，花里胡哨的，其实这个参数还是比较鸡肋的，除了好看没啥特别的用处。我们用 、  等缩进能让输出更加格式化，更适于观看。
 
-- 如果是一个数字, 则在字符串化时每一级别会比上一级别缩进多这个数字值的空格（最多10个空格）；
-- 如果是一个字符串，则每一级别会比上一级别多缩进该字符串（或该字符串的前10个字符）。
+* 如果是一个数字, 则在字符串化时每一级别会比上一级别缩进多这个数字值的空格（最多10个空格）；
+* 如果是一个字符串，则每一级别会比上一级别多缩进该字符串（或该字符串的前10个字符）。
 
+### 总结
 
-
-## 总结
-
-### `JSON.stringify()` 九大特性：
+#### `JSON.stringify()` 九大特性：
 
 **一、对于 `undefined`、任意的函数以及 `symbol` 三个特殊的值分别作为对象属性的值、数组元素、单独的值时的不同返回结果。**
 
-- `undefined`、任意的函数以及 `symbol` 作为对象属性值时 `JSON.stringify()` 跳过（忽略）对它们进行序列化
-- `undefined`、任意的函数以及 `symbol` 作为数组元素值时，`JSON.stringify()` 将会将它们序列化为 `null`
-- `undefined`、任意的函数以及 `symbol` 被 `JSON.stringify()` 作为单独的值进行序列化时都会返回 `undefined`
+* `undefined`、任意的函数以及 `symbol` 作为对象属性值时 `JSON.stringify()` 跳过（忽略）对它们进行序列化
+* `undefined`、任意的函数以及 `symbol` 作为数组元素值时，`JSON.stringify()` 将会将它们序列化为 `null`
+* `undefined`、任意的函数以及 `symbol` 被 `JSON.stringify()` 作为单独的值进行序列化时都会返回 `undefined`
 
 **二、非数组对象的属性不能保证以特定的顺序出现在序列化后的字符串中。**
 
@@ -387,14 +380,14 @@ JSON.stringify(tiedan, null, 2);
 
 **九、所有以 `symbol` 为属性键的属性都会被完全忽略掉，即便 `replacer` 参数中强制指定包含了它们。**
 
-### `JSON.stringify()` 第二个参数和第三个参数
+#### `JSON.stringify()` 第二个参数和第三个参数
 
-#### 强大的第二个参数：
+**强大的第二个参数：**
 
-- 作为函数时，它有两个参数，键（key）和值（value），函数类似就是数组方法 `map`、`filter` 等方法的回调函数，对每一个属性值都会执行一次该函数（期间我们还简单实现过一个 `map` 函数）。
-- 如果 `replacer` 是一个数组，数组的值代表将被序列化成 JSON 字符串的属性名。
+* 作为函数时，它有两个参数，键（key）和值（value），函数类似就是数组方法 `map`、`filter` 等方法的回调函数，对每一个属性值都会执行一次该函数（期间我们还简单实现过一个 `map` 函数）。
+* 如果 `replacer` 是一个数组，数组的值代表将被序列化成 JSON 字符串的属性名。
 
-#### 华丽的第三个参数：
+**华丽的第三个参数：**
 
-- 如果是一个数字, 则在字符串化时每一级别会比上一级别缩进多这个数字值的空格（最多10个空格）；
-- 如果是一个字符串，则每一级别会比上一级别多缩进该字符串（或该字符串的前10个字符）。
+* 如果是一个数字, 则在字符串化时每一级别会比上一级别缩进多这个数字值的空格（最多10个空格）；
+* 如果是一个字符串，则每一级别会比上一级别多缩进该字符串（或该字符串的前10个字符）。
