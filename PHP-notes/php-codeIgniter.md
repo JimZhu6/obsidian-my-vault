@@ -1,10 +1,8 @@
-# php-CodeIgniter
+# php-codeIgniter
 
 ## 安装
 
 [前往官网](http://codeigniter.org.cn/)下载最新版本并解压至服务器文件夹。
-
-
 
 ## 主题
 
@@ -18,11 +16,9 @@
 2. 第二段表示要调用类中的指定**函数**或**方法**；
 3. 第三段及其后面所有代表传给控制器的参数。
 
-
-
 #### 隐藏url中的index.php
 
-默认情况下，url会包含index.php，如果你的服务器是使用Apache，且启用了mod_rewrite，则可以在项目的根目录添加一个`.htaccess`文件，里面内容：
+默认情况下，url会包含index.php，如果你的服务器是使用Apache，且启用了mod\_rewrite，则可以在项目的根目录添加一个`.htaccess`文件，里面内容：
 
 ```
 RewriteEngine On
@@ -31,8 +27,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^(index\.php|images|css|js|robots\.txt) 	# 这里写要排除的资源
 RewriteRule ^(.*)$ index.php/$1 [L]
 ```
-
-
 
 #### 启用查询字符串
 
@@ -45,8 +39,6 @@ $config['function_trigger'] = 'm';
 ```
 
 将`enable_query_strings`设置为`true`，设置后，url格式变成：`index.php?c=controller&m=method`。其中`controller`是控制器的类名，`method`是要执行的方法名。
-
-
 
 #### 处理输出
 
@@ -61,8 +53,6 @@ if ($this->output->cache_expiration > 0)
 }
 ```
 
-
-
 #### 私有方法
 
 将方法声明为 private 或 protected，在方法名前加上一个下划线前缀也可以让该方法无法访问。
@@ -73,8 +63,6 @@ private function _utility()
     // some code
 }
 ```
-
-
 
 #### 构造函数
 
@@ -92,8 +80,6 @@ class Blog extends CI_Controller {
 }
 ```
 
-
-
 ### 视图
 
 #### 创建与加载视图
@@ -105,8 +91,6 @@ $this->load->view('name');
 ```
 
 name参数是视图的文件名。
-
-
 
 #### 向视图添加动态数据
 
@@ -137,8 +121,6 @@ $this->load->view('blogview', $data);
 </body>
 </html>
 ```
-
-
 
 #### 循环
 
@@ -179,8 +161,6 @@ class Blog extends CI_Controller {
 </html>
 ```
 
-
-
 ### 模型
 
 #### 创建模型
@@ -198,8 +178,6 @@ class Model_name extends CI_Model {
 ```
 
 文件名和类名应该一致，如上方的模型，其文件名应该为`Model_name.php`；
-
-
 
 #### 加载模型
 
@@ -223,11 +201,9 @@ $this->foobar->method();
 
 如果你有一个模型需要在整个应用程序中使用，需要在CodeIgniter初始化的时候就自动加载它，需要在`application/config/autoload.php`文件将该模型添加到`autoload['model']`数组中。
 
-
-
 ### 辅助函数
 
-[辅助函数参考](http://codeigniter.org.cn/user_guide/helpers/index.html)
+[辅助函数参考](http://codeigniter.org.cn/user\_guide/helpers/index.html)
 
 #### 加载辅助函数
 
@@ -245,13 +221,11 @@ $this->load->helper(array('helper1', 'helper2', 'helper3'));
 
 如果有辅助函数需要在整个应用程序中使用，在`application/config/autoload.php`中的`$autoload['helper']`添加它们。
 
-
-
 #### 扩展辅助函数
 
-在`application/helpers/`目录下新建一个文件，文件名以**MY_**开头，以**_helper**结尾。
+在`application/helpers/`目录下新建一个文件，文件名以**MY\_**开头，以**\_helper**结尾。
 
-> 开头的**MY_**可以通过配置项`$config['subclass_prefix']`进行修改。
+> 开头的**MY\_**可以通过配置项`$config['subclass_prefix']`进行修改。
 
 例如，写一个数组判断的辅助函数，创建文件`application/helpers/MY_array_helper.php`
 
@@ -270,11 +244,9 @@ function any_in_array($needle, $haystack)
 }
 ```
 
-
-
 ### CodeIgniter类库
 
-[类库参考](http://codeigniter.org.cn/user_guide/libraries/index.html)
+[类库参考](http://codeigniter.org.cn/user\_guide/libraries/index.html)
 
 #### 加载类库
 
@@ -288,8 +260,6 @@ $this->load->library('form_validation');
 $this->load->library(array('email', 'table'));
 ```
 
-
-
 #### 创建类库
 
 > 除了**数据库类**不能被扩展和替换以外，其他的类都可以。
@@ -298,9 +268,9 @@ $this->load->library(array('email', 'table'));
 
 命名约定
 
-- 文件名首字母需要大写；
-- 类名首字母需要大写；
-- 类名和文件名必须一致。
+* 文件名首字母需要大写；
+* 类名首字母需要大写；
+* 类名和文件名必须一致。
 
 ```php
 <?php
@@ -343,8 +313,6 @@ class Someclass {
 }
 ```
 
-
-
 #### 在创建的类库中使用CodeIgniter资源
 
 在一般情况下，在**控制器**里使用CodeIgniter原生资源会使用`$this`来调用，但是如果要在自己创建的类中使用Codeigniter资源，则需要通过`get_instance()`函数来访问。将这个函数赋值给一个变量后，就可以用这个变量代替`$this`。
@@ -365,8 +333,6 @@ $CI->config->item('base_url');
 >
 > 这是非常重要的，引用赋值允许你使用原始的 CodeIgniter 对象，而不是创建一个副本。
 
-
-
 #### 使用新建的类库替换原生类库
 
 简单的将你的类文件名改为和原生的类库文件一致，CodeIgniter 就会使用它替换掉原生的类库。 要使用该功能，你必须将你的类库文件和类定义改成和原生的类库完全一样，例如， 要替换掉原生的 Email 类的话，你要新建一个 `application/libraries/Email.php` 文件， 然后定义定义你的类:
@@ -375,7 +341,7 @@ $CI->config->item('base_url');
 class CI_Email {}
 ```
 
-注意大多数原生类都以 CI_ 开头。
+注意大多数原生类都以 CI\_ 开头。
 
 要加载你的类库，和标准的方法一样:
 
@@ -385,16 +351,14 @@ $this->load->library('email');
 
 **注意数据库类不能被你自己的类替换掉。**
 
-
-
 #### 扩展原生类库
 
 在扩展类的时候需要注意：
 
-- 类的定义时需要继承它的父类
-- 新的类名和文件名需要以**MY_**为前缀（可通过配置项`$config['subclass_prefix']`进行修改）
+* 类的定义时需要继承它的父类
+* 新的类名和文件名需要以**MY\_**为前缀（可通过配置项`$config['subclass_prefix']`进行修改）
 
-例如，要扩展原生的 Email 类你需要新建一个文件命名为 *application/libraries/MY_Email.php* ， 然后定义你的类:
+例如，要扩展原生的 Email 类你需要新建一个文件命名为 _application/libraries/MY\_Email.php_ ， 然后定义你的类:
 
 ```php
 class MY_Email extends CI_Email {}
@@ -413,8 +377,6 @@ class MY_Email extends CI_Email {
 
 **并不是所有的类库构造函数的参数都是一样的，在对类库扩展之前 先看看它是怎么实现的。**
 
-
-
 #### 加载扩展的类
 
 要加载你的扩展类，还是使用和通常一样的语法。不用包含前缀。例如， 要加载上例中你扩展的 Email 类，你可以使用:
@@ -423,27 +385,17 @@ class MY_Email extends CI_Email {
 $this->load->library('email');
 ```
 
-
-
 ### 资源自动加载
 
-- libraries/ 目录下的核心类
-- helpers/ 目录下的辅助函数
-- config/ 目录下的用户自定义配置文件
-- system/language/ 目录下的语言文件
-- models/ 目录下的模型类
+* libraries/ 目录下的核心类
+* helpers/ 目录下的辅助函数
+* config/ 目录下的用户自定义配置文件
+* system/language/ 目录下的语言文件
+* models/ 目录下的模型类
 
 修改配置文件`application/config/autoload.php`，将其数组添加你要自动加载的资源。
 
 另外，如果你想让 CodeIgniter 使用 [Composer](https://getcomposer.org/) 的自动加载， 只需将 `application/config/config.php` 配置文件中的 `$config['composer_autoload']` 设置为 `TRUE` 或者设置为你自定义的路径。
-
-
-
-
-
-
-
-
 
 ## 小技巧
 
@@ -457,8 +409,6 @@ $this->load->library('email');
 <link rel="stylesheet" href="<?=base_url()?>/assets/css/index.css">
 <script src="<?=base_url()?>/assets/js/index.js"></script>
 ```
-
-
 
 ### 使用Redis
 
@@ -482,15 +432,11 @@ $this->load->driver('cache');
 $this->cache->redis->save('foo', 'bar', 10);
 ```
 
-
-
 ### 引用composer安装的库
 
 在项目跟目录下载号需要安装的包后，需要修改`application/config/config.php`里面的`$config['composer_autoload']`，指向vendor文件夹的`autoload.php`文件。
 
 然后在你需要用到这个库的**控制器**使用就可以了。
-
-
 
 ### 部署CI框架的项目到服务器后遇到的问题
 
@@ -532,8 +478,6 @@ if (!-e $request_filename)
 }
 ```
 
-
-
 ### 通过axios使用post方式提交的错误
 
 当前端项目是使用`axios`时，通过post提交数据到CI框架的后台时，后台通过`$_POST`将接收不到这些数据，原因是：
@@ -557,8 +501,6 @@ axios({
 })
 ```
 
-
-
 #### 解决方式2：使用transformRequest转换数据
 
 ```js
@@ -577,15 +519,11 @@ axios({
 })
 ```
 
-
-
 #### 解决方式3：通过字符串拼接的方式传参
 
 ```js
 axios.post('/api/lockServer/search',"userName='admin'&pwd='admin'");
 ```
-
-
 
 ### 修改开发/线上环境
 
@@ -613,4 +551,3 @@ SetEnv CI_ENV production
 $system_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'system';
 $application_folder = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'application';
 ```
-

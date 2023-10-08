@@ -1,4 +1,4 @@
-# Python爬虫
+# Python爬虫笔记
 
 > 学http协议，知道哪个协议可以帮你省带宽和时间
 >
@@ -16,7 +16,7 @@
 >
 > ios开发要学吧？安卓开发也要学吧？不然怎么反编译人家的app去拿人家隐藏的接口加密算法？
 >
-> ---
+>
 >
 > 1.人家检测出你是爬虫，拉黑你IP （人家究竟是通过你的ua、行为特则 还是别的检测出你是爬虫的？你怎么规避？）
 >
@@ -46,7 +46,7 @@
 
 ## 入门
 
-### 了解Python爬虫所需要的库 -- [requests](http://docs.python-requests.org/zh_CN/latest/user/quickstart.html)
+### 了解Python爬虫所需要的库 -- [requests](http://docs.python-requests.org/zh\_CN/latest/user/quickstart.html)
 
 #### 导入库
 
@@ -140,7 +140,7 @@ Requests 中也有一个内置的 JSON 解码器，助你处理 JSON 数据：
 
 需要注意的是，成功调用 `r.json()` 并**不**意味着响应的成功。有的服务器会在失败的响应中包含一个 JSON 对象（比如 HTTP 500 的错误细节）。这种 JSON 会被解码返回。要检查请求是否成功，请使用 `r.raise_for_status()` 或者检查 `r.status_code` 是否和你的期望相同。
 
-> status_code可返回状态码
+> status\_code可返回状态码
 
 #### 原始响应内容
 
@@ -179,10 +179,10 @@ with open(filename, 'wb') as fd:
 
 注意: 定制 header 的优先级低于某些特定的信息源，例如：
 
-- 如果在 `.netrc` 中设置了用户认证信息，使用 headers= 设置的授权就不会生效。而如果设置了 `auth=` 参数，``.netrc`` 的设置就无效了。
-- 如果被重定向到别的主机，授权 header 就会被删除。
-- 代理授权 header 会被 URL 中提供的代理身份覆盖掉。
-- 在我们能判断内容长度的情况下，header 的 Content-Length 会被改写。
+* 如果在 `.netrc` 中设置了用户认证信息，使用 headers= 设置的授权就不会生效。而如果设置了 `auth=` 参数，`.netrc` 的设置就无效了。
+* 如果被重定向到别的主机，授权 header 就会被删除。
+* 代理授权 header 会被 URL 中提供的代理身份覆盖掉。
+* 在我们能判断内容长度的情况下，header 的 Content-Length 会被改写。
 
 更进一步讲，Requests 不会基于定制 header 的具体情况改变自己的行为。只不过在最后的请求中，所有的 header 信息都会被传递进去。
 
@@ -264,7 +264,7 @@ with open(filename, 'wb') as fd:
 True
 ```
 
-如果发送了一个错误请求(一个 4XX 客户端错误，或者 5XX 服务器错误响应)，我们可以通过[`Response.raise_for_status()`](http://docs.python-requests.org/zh_CN/latest/api.html#requests.Response.raise_for_status) 来抛出异常：
+如果发送了一个错误请求(一个 4XX 客户端错误，或者 5XX 服务器错误响应)，我们可以通过[`Response.raise_for_status()`](http://docs.python-requests.org/zh\_CN/latest/api.html#requests.Response.raise\_for\_status) 来抛出异常：
 
 ```python
 >>> bad_r = requests.get('http://httpbin.org/status/404')
@@ -308,7 +308,7 @@ None
 '{"cookies": {"cookies_are": "working"}}'
 ```
 
-Cookie 的返回对象为 [`RequestsCookieJar`](http://docs.python-requests.org/zh_CN/latest/api.html#requests.cookies.RequestsCookieJar)，它的行为和字典类似，但接口更为完整，适合跨域名跨路径使用。你还可以把 Cookie Jar 传到 Requests 中：
+Cookie 的返回对象为 [`RequestsCookieJar`](http://docs.python-requests.org/zh\_CN/latest/api.html#requests.cookies.RequestsCookieJar)，它的行为和字典类似，但接口更为完整，适合跨域名跨路径使用。你还可以把 Cookie Jar 传到 Requests 中：
 
 ```python
 >>> jar = requests.cookies.RequestsCookieJar()
@@ -326,7 +326,7 @@ Cookie 的返回对象为 [`RequestsCookieJar`](http://docs.python-requests.org/
 
 可以使用响应对象的 `history` 方法来追踪重定向。
 
-[`Response.history`](http://docs.python-requests.org/zh_CN/latest/api.html#requests.Response.history) 是一个 [`Response`](http://docs.python-requests.org/zh_CN/latest/api.html#requests.Response) 对象的列表，为了完成请求而创建了这些对象。这个对象列表按照从最老到最近的请求进行排序。
+[`Response.history`](http://docs.python-requests.org/zh\_CN/latest/api.html#requests.Response.history) 是一个 [`Response`](http://docs.python-requests.org/zh\_CN/latest/api.html#requests.Response) 对象的列表，为了完成请求而创建了这些对象。这个对象列表按照从最老到最近的请求进行排序。
 
 例如，Github 将所有的 HTTP 请求重定向到 HTTPS：
 
@@ -376,16 +376,16 @@ requests.exceptions.Timeout: HTTPConnectionPool(host='github.com', port=80): Req
 
 > **注意:**`timeout` 仅对连接过程有效，与响应体的下载无关。 `timeout` 并不是整个下载响应的时间限制，而是如果服务器在 `timeout` 秒内没有应答，将会引发一个异常（更精确地说，是在`timeout` 秒内没有从基础套接字上接收到任何字节的数据时）If no timeout is specified explicitly, requests do not time out.
 
-**连接**超时指的是在你的客户端实现到远端机器端口的连接时（对应的是`connect()`_），Request 会等待的秒数。一个很好的实践方法是把连接超时设为比 3 的倍数略大的一个数值，因为 [TCP 数据包重传窗口 (TCP packet retransmission window)](http://www.hjp.at/doc/rfc/rfc2988.txt) 的默认大小是 3。
+**连接**超时指的是在你的客户端实现到远端机器端口的连接时（对应的是`connect()`\_），Request 会等待的秒数。一个很好的实践方法是把连接超时设为比 3 的倍数略大的一个数值，因为 [TCP 数据包重传窗口 (TCP packet retransmission window)](http://www.hjp.at/doc/rfc/rfc2988.txt) 的默认大小是 3。
 
 #### 错误与异常
 
 遇到网络问题（如：DNS 查询失败、拒绝连接等）时，Requests 会抛出一个 `ConnectionError` 异常。
 
-如果 HTTP 请求返回了不成功的状态码， [`Response.raise_for_status()`](http://docs.python-requests.org/zh_CN/latest/api.html#requests.Response.raise_for_status) 会抛出一个 `HTTPError`异常。
+如果 HTTP 请求返回了不成功的状态码， [`Response.raise_for_status()`](http://docs.python-requests.org/zh\_CN/latest/api.html#requests.Response.raise\_for\_status) 会抛出一个 `HTTPError`异常。
 
 若请求超时，则抛出一个 `Timeout` 异常。
 
 若请求超过了设定的最大重定向次数，则会抛出一个 `TooManyRedirects` 异常。
 
-所有Requests显式抛出的异常都继承自 `requests.exceptions.RequestException` 
+所有Requests显式抛出的异常都继承自 `requests.exceptions.RequestException`
