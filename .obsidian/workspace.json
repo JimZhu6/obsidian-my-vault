@@ -4,22 +4,33 @@
     "type": "split",
     "children": [
       {
-        "id": "f768cba7c61fd698",
+        "id": "b0060e4236c775b8",
         "type": "tabs",
         "children": [
           {
-            "id": "d2e7cb75e3f2a39c",
+            "id": "3abcb0c33fe8b771",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/Pasted image 20231008165042.png"
+              }
+            }
+          },
+          {
+            "id": "24e12bde9500474e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md",
+                "file": "Network-notes/单线复用.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -64,6 +75,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "a1e4aebe9e97a469",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -85,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md",
+                "file": "Network-notes/单线复用.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md",
+                "file": "Network-notes/单线复用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,16 +144,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "VPS-notes/Google Drive笔记.md"
+                "file": "Network-notes/单线复用.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,12 +165,31 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "d2e7cb75e3f2a39c",
+  "active": "24e12bde9500474e",
   "lastOpenFiles": [
+    "images/Pasted image 20231008165042.png",
+    "images/Pasted image 20231008164814.png",
+    "images/Pasted image 20231008164252.png",
+    "images/Pasted image 20231008162822.png",
+    "images/Pasted image 20231008160916.png",
+    "images/Pasted image 20231008160617.png",
+    "images/Pasted image 20231008160507.png",
+    "images/Pasted image 20231008154338.png",
+    "images/Pasted image 20231007215757.png",
+    "images/1285132d4f833e8ff05c2cd1dc48c6d.jpg",
+    "Network-notes/单线复用.md",
+    "2023-10-08.md",
+    "SUMMARY.md",
+    "images",
+    "Network-notes",
+    "Cocos-notes/Cocos2d-js-note.md",
+    "README.md",
+    "JS-notes/生成音频.md",
+    "uniapp/微信小程序的图片预览兼容性处理.md",
+    "Cocos-notes/Cocos-note.md",
+    "VPS-notes/Google Drive笔记.md",
     "uniapp/swiper-item高度自适应.md",
     "RaspberryPi-notes/Ubuntu-RaspberryPi.md",
-    "uniapp/微信小程序的图片预览兼容性处理.md",
-    "SUMMARY.md",
     "TypeScript-notes.md",
     "uniapp.md",
     "JS-notes/打印页面.md",
@@ -164,29 +202,16 @@
     "VPS-notes/vps安全相关.md",
     "VPS-notes/Ubuntu笔记.md",
     "VPS-notes/ssh小记.md",
-    "VPS-notes/Google Drive笔记.md",
     "VPS-notes/CentOs7笔记.md",
     "VUE-notes/vue3-note.md",
-    "Web-notes/在网页中引入在线字体.md",
-    "README.md",
-    "Cocos-notes/Cocos2d-js-note.md",
-    "Cocos-notes/Cocos-note.md",
-    "Game-notes/Minecraft-server.md",
-    "Phone-notes/ZenFone6刷机.md",
-    "JS-notes/Fisher–Yates shuffle洗牌算法.md",
     "Windows-notes",
     "Web-notes",
     "VUE-notes",
     "VPS-notes",
     "TypeScript-notes",
     "TelegramBot-notes",
-    "RaspberryPi-notes/img/sp3.jpg",
-    "RaspberryPi-notes/img/sp2.jpg",
-    "RaspberryPi-notes/img/sp1.jpg",
     "RaspberryPi-notes/img",
     "RaspberryPi-notes",
-    "Python-notes",
-    "PHP-notes",
     "未命名.canvas"
   ]
 }
