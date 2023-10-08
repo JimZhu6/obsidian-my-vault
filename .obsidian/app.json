@@ -1,6 +1,6 @@
 {
   "trashOption": "local",
-  "attachmentFolderPath": "./",
+  "attachmentFolderPath": "images",
   "newFileLocation": "current",
   "newLinkFormat": "absolute",
   "tabSize": 2,
