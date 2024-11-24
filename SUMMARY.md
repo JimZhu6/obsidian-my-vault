@@ -84,7 +84,7 @@
 
 ## Cocos-notes
 
-- [Cocos2d-js-note](Cocos-notes/Cocos2d-js-note.md)
+- [Cocos-note](Cocos-notes/Cocos-note.md)
 
 ## Network-notes
 
