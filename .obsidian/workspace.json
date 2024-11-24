@@ -4,33 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "b0060e4236c775b8",
+        "id": "dd54912cad973075",
         "type": "tabs",
         "children": [
           {
-            "id": "3abcb0c33fe8b771",
+            "id": "57167a1497339dfd",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "images/Pasted image 20231008165042.png"
-              }
-            }
-          },
-          {
-            "id": "24e12bde9500474e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Network-notes/单线复用.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -50,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -65,7 +54,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -73,7 +64,9 @@
             "type": "leaf",
             "state": {
               "type": "starred",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           },
           {
@@ -81,7 +74,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -104,7 +99,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Network-notes/单线复用.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +106,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
             }
           },
           {
@@ -121,10 +117,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Network-notes/单线复用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "出链"
             }
           },
           {
@@ -135,7 +132,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -143,9 +142,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Network-notes/单线复用.md"
-              }
+              "state": {},
+              "icon": "lucide-list",
+              "title": "大纲"
             }
           }
         ],
@@ -165,8 +164,16 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "24e12bde9500474e",
+  "active": "57167a1497339dfd",
   "lastOpenFiles": [
+    "Other/i18n（国际化）地域标识码.md",
+    "SUMMARY.md",
+    "Other",
+    "README.md",
+    "Network-notes/单线复用.md",
+    "RaspberryPi-notes/Gadgets-note.md",
+    "2024-11-20.md",
+    "未命名.canvas",
     "images/Pasted image 20231008165042.png",
     "images/Pasted image 20231008164814.png",
     "images/Pasted image 20231008164252.png",
@@ -177,13 +184,10 @@
     "images/Pasted image 20231008154338.png",
     "images/Pasted image 20231007215757.png",
     "images/1285132d4f833e8ff05c2cd1dc48c6d.jpg",
-    "Network-notes/单线复用.md",
     "2023-10-08.md",
-    "SUMMARY.md",
     "images",
     "Network-notes",
     "Cocos-notes/Cocos2d-js-note.md",
-    "README.md",
     "JS-notes/生成音频.md",
     "uniapp/微信小程序的图片预览兼容性处理.md",
     "Cocos-notes/Cocos-note.md",
@@ -202,16 +206,12 @@
     "VPS-notes/vps安全相关.md",
     "VPS-notes/Ubuntu笔记.md",
     "VPS-notes/ssh小记.md",
-    "VPS-notes/CentOs7笔记.md",
-    "VUE-notes/vue3-note.md",
     "Windows-notes",
     "Web-notes",
     "VUE-notes",
     "VPS-notes",
     "TypeScript-notes",
     "TelegramBot-notes",
-    "RaspberryPi-notes/img",
-    "RaspberryPi-notes",
-    "未命名.canvas"
+    "RaspberryPi-notes/img"
   ]
 }

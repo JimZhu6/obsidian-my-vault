@@ -84,9 +84,11 @@
 
 ## Cocos-notes
 
-- [Cocos2d-js-note](Cocos-notes/Cocos2d-js-note.md)
+- [Cocos-note](Cocos-notes/Cocos-note.md)
 
 ## Network-notes
 
 - [单线复用](Network-notes/单线复用.md)
 
+
+- [国际化地域标识码](Other/i18n（国际化）地域标识码.md)
