@@ -1,4 +1,3 @@
-# Table of contents
 
 * [Initial page](README.md)
 
@@ -70,6 +69,7 @@
 
 * [window-note](Windows-notes/windows-note.md)
 * [node-note](Windows-notes/node-note.md)
+* [WSL-note](Windows-notes/wsl-note.md)
 
 ## RaspberryPi-notes
 
@@ -90,5 +90,6 @@
 
 - [单线复用](Network-notes/单线复用.md)
 
+## Other-notes
 
 - [国际化地域标识码](Other/i18n（国际化）地域标识码.md)
